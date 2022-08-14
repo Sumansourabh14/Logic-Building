@@ -44,4 +44,31 @@ function smallerNumbersThanCurrent() {
     return countArray;
 }
 
-console.log(smallerNumbersThanCurrent());
+// console.log(smallerNumbersThanCurrent());
+
+
+// 3. 
+// https://leetcode.com/problems/single-number/
+
+// https://leetcode.com/problems/single-number/submissions/
+
+// const numbers = [2, 2, 1];
+const numbers = [4,1,2,1,2];
+
+function singleNumber() {
+    //loop 1
+    for (let number1 of numbers) {
+        let count1 = 0;
+        //loop 2
+        for (let number2 of numbers) {
+            if (number1 == number2) {
+                count1++;
+            }
+        }
+        if (count1 == 1) {
+            return number1;
+        }
+    }
+}
+
+// console.log(singleNumber());
