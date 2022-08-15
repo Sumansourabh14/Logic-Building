@@ -72,3 +72,20 @@ function singleNumber() {
 }
 
 // console.log(singleNumber());
+
+
+
+// 6.
+// https://leetcode.com/problems/move-zeroes/
+let n = [0, 1, 0, 3, 12];
+// let n = [0];
+
+function moveZeroes() {
+    for (let element of n) {
+        if (element == 0) {
+            n.splice(n.indexOf(element), 1);
+            n.push(element);
+        }
+    }
+    return n;
+}
