@@ -89,3 +89,42 @@ function moveZeroes() {
     }
     return n;
 }
+
+
+// 8.
+// https://leetcode.com/problems/length-of-last-word/
+
+// let s = "Hello World";
+let s = "   fly me   to   the moon  ";
+// let s = "luffy is still joyboy";
+
+function lengthOfLastWord() {
+    
+    let s1 = s.trim().split(' ');
+    // for (let i = s1.length - 1; i >= 0; i--) {
+        lastWordLength = s1[s1.length - 1].length;
+        // console.log(s1[i].length);
+    // }
+    // return s1.at(-1).length;
+    return lastWordLength;
+
+}
+
+console.log(lengthOfLastWord());
+
+
+// 9.
+// https://leetcode.com/problems/contains-duplicate/
+
+var containsDuplicate = function(nums) {
+    for(let i = 0; i < nums.length; i++) {
+        for(let j = i + 1; j < nums.length; j++) {
+            if(nums[i] == nums[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}; 
+
+console.log(containsDuplicate([1,2,3,4]));
