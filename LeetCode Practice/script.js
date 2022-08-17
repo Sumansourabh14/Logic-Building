@@ -172,3 +172,28 @@ function printFizzBuzz(n) {
 }
 
 // console.log(printFizzBuzz(15));
+
+
+// 11
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+let word1 = ["ab", "c"];
+let word2 = ["a", "bc"];
+// word1 = ["a", "cb"], word2 = ["ab", "c"];
+// word1  = ["abc", "d", "defg"], word2 = ["abcddefg"];
+
+function arrayStringsAreEqual() {
+    let sum1 = "";
+    for (let word of word1) {
+        sum1 = sum1 + word;
+    }
+    let sum2 = "";
+    for (let word of word2) {
+        sum2 = sum2 + word;
+    }
+    if (sum1 == sum2) {
+        return true;
+    }
+    return false;
+}
+
+console.log(arrayStringsAreEqual());
