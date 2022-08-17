@@ -74,6 +74,26 @@ function singleNumber() {
 // console.log(singleNumber());
 
 
+// 4. Calculate wealth
+let accounts = [[1,2,3],[3,2,1]];
+
+function calcWealth() {
+    let previousSum = 0;
+    for (let row = 0; row < accounts.length; row++) {
+        let currentSum = 0;
+        for (let col = 0; col < accounts[row].length; col++) {
+            currentSum += accounts[row][col];
+        }
+        if (previousSum < currentSum) {
+            previousSum = currentSum;
+        }
+    }
+    return previousSum;
+}
+
+// console.log(calcWealth());
+
+
 
 // 6.
 // https://leetcode.com/problems/move-zeroes/
