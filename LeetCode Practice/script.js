@@ -226,3 +226,25 @@ function twoSum(nums, target) {
 // console.log(twoSum([3, 3], 6));
 
 // console.log(twoSum([2, 5, 5, 11], 10));
+
+
+// 13. 
+// https://leetcode.com/problems/count-items-matching-a-rule/
+function countMatches(items, ruleKey, ruleValue) {
+    let count = 0;
+    for (let i = 0; i < items.length; i++) { 
+        if (ruleKey === "type" &&  items[i][0] == ruleValue) {
+            count++;
+        }
+        else if (ruleKey === "color" && items[i][1] == ruleValue) {
+            count++;
+        }
+        else if (ruleKey === "name" && items[i][2] == ruleValue) {
+            count++;
+        }
+    }
+    return count;
+};
+
+console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"));
+console.log(countMatches([["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], "type", "phone"));
