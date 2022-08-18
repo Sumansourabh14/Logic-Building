@@ -248,3 +248,14 @@ function countMatches(items, ruleKey, ruleValue) {
 
 console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"));
 console.log(countMatches([["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], "type", "phone"));
+
+
+// 14.
+// https://leetcode.com/problems/truncate-sentence/
+function truncateSentence(s, k) {
+    let arrayS = s.split(' ');
+    arrayS.splice(k, arrayS.length - k);
+    return arrayS.join(' ');
+}
+
+console.log(truncateSentence("Hello how are you Contestant", 4));
