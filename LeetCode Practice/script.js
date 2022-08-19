@@ -287,3 +287,37 @@ function largestAltitude(gain) {
 }
 
 console.log(largestAltitude([-5,1,5,0,-7]));
+
+
+// 16.
+// https://leetcode.com/problems/robot-return-to-origin/
+function isMovesToOrigin(moves) {
+    let valueInX = 0;
+    let valueInY = 0;
+    for (let move of moves) {
+        switch (move) {
+            case "U":
+                valueInY++;
+                break;
+            case "D":
+                valueInY--;
+                break;
+            case "L":
+                valueInX--;
+                break;
+            case "R":
+                valueInX++;
+                break;
+            default:
+                break;
+        }
+    }
+    if (valueInX == 0 && valueInY == 0) {
+        return true;
+    }
+    return false;
+}
+
+console.log(isMovesToOrigin("UD"));
+console.log(isMovesToOrigin("LL"));
+console.log(isMovesToOrigin("URDL"));
