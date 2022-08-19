@@ -259,3 +259,31 @@ function truncateSentence(s, k) {
 }
 
 console.log(truncateSentence("Hello how are you Contestant", 4));
+
+
+// 15.
+// https://leetcode.com/problems/find-the-highest-altitude/
+function largestAltitude(gain) {
+    let gainingArray = [];
+    let sum = 0;
+    gainingArray.push(sum);
+    let max = 0;
+
+    // Find the altitudes
+    for(let gained of gain) {
+        sum = sum + gained;
+        gainingArray.push(sum);
+    } 
+
+    // Find highest of the altitudes
+    for (let g of gainingArray) {
+        if (g > max) {
+            max = g;
+        }
+    }
+
+    // Return the highest altitude
+    return max;
+}
+
+console.log(largestAltitude([-5,1,5,0,-7]));
