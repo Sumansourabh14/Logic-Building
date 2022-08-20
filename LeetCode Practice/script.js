@@ -321,3 +321,28 @@ function isMovesToOrigin(moves) {
 console.log(isMovesToOrigin("UD"));
 console.log(isMovesToOrigin("LL"));
 console.log(isMovesToOrigin("URDL"));
+
+
+// 17.
+// https://leetcode.com/problems/n-th-tribonacci-number/
+function tribonacci(n) {
+    //Intitialize the starting values
+    let a = 0, b = 1, c = 1;
+    let temp;
+    let i = 1;
+    if (n == 0) {
+        return 0;
+    }
+    while (i < n - 1) {
+        temp = a + b + c;
+        a = b;  //swap
+        b = c;
+        c = temp;
+        i++;
+    }
+    return c;
+};
+
+console.log(tribonacci(4));
+console.log(tribonacci(25));
+console.log(tribonacci(0));
