@@ -114,7 +114,6 @@ function moveZeroes() {
 // 8.
 // https://leetcode.com/problems/length-of-last-word/
 
-// let s = "Hello World";
 let s = "   fly me   to   the moon  ";
 // let s = "luffy is still joyboy";
 
