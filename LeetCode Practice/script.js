@@ -344,3 +344,24 @@ function tribonacci(n) {
 console.log(tribonacci(4));
 console.log(tribonacci(25));
 console.log(tribonacci(0));
+
+
+//Anagram
+function isAnagram(s, t) {
+    if (s.length !== t.length) {
+        return false;
+    }
+
+    let a = s.split('').sort();
+    let b = t.split('').sort();
+
+    for (let i = 0; i < s.length; i++) {
+        if (a[i] !== b[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isAnagram("rat", "car"));
+console.log(isAnagram("anagram", "nagaram"));
