@@ -414,3 +414,44 @@ function nextGreatestLetter(letters, target) {
 }
 
 // console.log(nextGreatestLetter(["c","f","j"], "a"));
+
+
+// 1920. 
+// https://leetcode.com/problems/build-array-from-permutation/
+function buildArray(nums) {
+    let newArr = [];
+    for (let i = 0; i < nums.length; i++) {
+        newArr.push(nums[nums[i]]);
+    }
+    return newArr;
+}
+
+// console.log(buildArray([0,2,1,5,3,4]));
+// console.log(buildArray([5,0,1,2,3,4]));
+
+
+// 1929.
+// https://leetcode.com/problems/concatenation-of-array/
+function getConcatenation(nums) {
+    let ans = [];
+    let n = nums.length;
+    for (i = 0; i < n; i++) {
+        ans[i] = nums[i];
+        ans[i + n] = nums[i];
+        ans.push(ans[i], ans[i + n]);
+    }
+    ans.length = 2 * n;
+    return ans;
+}
+
+// console.log(getConcatenation([1, 2, 1]));
+
+function shuffle(nums, n) {
+    let ans = [];
+    for (let i = 0; i < n; i++) {
+        ans.push(nums[i], nums[i + n])
+    }
+    return ans;
+}
+
+// console.log(shuffle([2,5,1,3,4,7], 3));
