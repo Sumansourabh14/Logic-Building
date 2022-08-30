@@ -455,3 +455,20 @@ function shuffle(nums, n) {
 }
 
 // console.log(shuffle([2,5,1,3,4,7], 3));
+
+
+// 2278.
+// https://leetcode.com/problems/percentage-of-letter-in-string/
+function percentageLetter(s, letter) {
+    let count = 0;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] == letter) {
+            count++;
+        }
+    }
+    return Math.floor(count/s.length * 100);
+}
+
+console.log(percentageLetter("foobar", "o"));
+console.log(percentageLetter("jjjj", "k"));
+console.log(percentageLetter("sgawtb", "s"));
