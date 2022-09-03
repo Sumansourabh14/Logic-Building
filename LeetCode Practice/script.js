@@ -472,3 +472,91 @@ function percentageLetter(s, letter) {
 console.log(percentageLetter("foobar", "o"));
 console.log(percentageLetter("jjjj", "k"));
 console.log(percentageLetter("sgawtb", "s"));
+
+
+// 509.
+// https://leetcode.com/problems/fibonacci-number/
+function fib(n) {
+    let a = 0;
+    let b = 1;
+    let i = 0;
+    let c;
+    while (i < n) {
+        c = a + b;
+        a = b;
+        b = c;
+        i++;
+    }
+    return a;
+}
+
+// console.log(fib(2));
+// console.log(fib(3));
+// console.log(fib(4));
+// console.log(fib(5));
+// console.log(fib(23));
+
+
+// 70.
+// https://leetcode.com/problems/climbing-stairs/
+function climbStairs(n) {
+    let a = 0;
+    let b = 1;
+    let i = 0;
+
+    while (i <= n) {
+        let c = a + b;
+        a = b;
+        b = c;
+        i++;
+    }
+
+    return a;
+}
+
+// console.log(climbStairs(2));
+// console.log(climbStairs(3));
+// console.log(climbStairs(4));
+// console.log(climbStairs(5));
+// console.log(climbStairs(6));
+// console.log(climbStairs(7));
+
+
+
+// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+function numberOfSteps(num) {
+    let c = 0;
+    while (num > 0) {
+        if (num % 2 === 0) {
+            num = num / 2;
+        }
+        else {
+            num = num - 1;
+        }
+        c++;
+    }
+    return c;
+}
+
+// console.log(numberOfSteps(14));
+// console.log(numberOfSteps(8));
+
+
+
+// https://leetcode.com/problems/count-operations-to-obtain-zero/
+function countOperations(num1, num2) {
+    let operations = 0;
+    while (num1 !== 0 && num2 !== 0) {
+        if (num1 >= num2) {
+            num1 = num1 - num2;
+        }
+        else {
+            num2 = num2 - num1;
+        }
+        operations++;
+    }
+    return operations;
+}
+
+// console.log(countOperations(2, 3));
+// console.log(countOperations(10, 10));
