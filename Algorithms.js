@@ -72,3 +72,41 @@ function orderAgnosticBinarySearch(arr, target) {
 }
 
 console.log(orderAgnosticBinarySearch([45, 33, 22, 10, 6, 3], 10));
+
+
+// ** BUBBLE SORT **
+
+// Other names - SINKING SORT/EXCHANGE SORT
+// (Comparison sort method)
+
+// Sort elements of an array in asc/desc order by comparing current and previous values
+
+function bubbleSort(arr) {
+    let swapped;
+
+    for (let i = 0; i < arr.length; i++) {
+        swapped = false;
+        for (let j = 1; j < arr.length - i; j++) {
+            // If the item is smaller than the previous item, swap!
+            if (arr[j] < arr[j - 1]) {
+                //swap
+                let temp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = temp;
+
+                swapped = true;
+            }
+        }
+
+        // If not swapped for a particular value of i, it means the array is sorted.
+        // Hence, stop the program.
+        if (!swapped) {
+            break;
+        } 
+    }
+    return arr;
+}
+
+// console.log(bubbleSort([1, 4, 2, 5, 8]));
+// console.log(bubbleSort([1, -4, 2, -5, 8]));
+// console.log(bubbleSort([]));
