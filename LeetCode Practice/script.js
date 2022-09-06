@@ -560,3 +560,78 @@ function countOperations(num1, num2) {
 
 // console.log(countOperations(2, 3));
 // console.log(countOperations(10, 10));
+
+
+
+// https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
+function countOdds(low, high) {
+    let count = 0;
+    for (let i = low; i <= high; i++) {
+        if (i % 2 !== 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// console.log(countOdds(3, 7));
+// console.log(countOdds(8, 10));
+
+
+
+//
+// https://leetcode.com/problems/peak-index-in-a-mountain-array/
+function peakIndexInMountainArray(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start < end) {
+        let mid = Math.floor(start + (end - start) / 2);
+
+        if (arr[mid] < arr[mid + 1]) {
+            start = mid + 1;
+        }
+        // checking for (arr[mid] > arr[mid + 1])
+        else {
+            end = mid;
+        }
+    }
+    // In the end, start and end will point at the same element hence, return either start or end.
+    // (returning index of the peak element)
+    return start;
+}
+
+// console.log(peakIndexInMountainArray([0,1,0]));
+// console.log(peakIndexInMountainArray([0,2,1,0]));
+// console.log(peakIndexInMountainArray([0,10,5,2]));
+// console.log(peakIndexInMountainArray([3,4,5,1]));
+// console.log(peakIndexInMountainArray([1,2,1,3,5,6,4]));
+
+
+
+//
+function findPivot(nums) {
+    let start = 0;
+    let end = nums.length - 1;
+
+    while (start <= end) {
+        let mid = start + (end - start) / 2;
+
+        if (mid < end && nums[mid] > nums[mid + 1]) {
+            return mid;
+        }
+        if (mid > start && nums[mid] < nums[mid - 1]) {
+            return mid - 1;
+        }
+        if (nums[mid] <= nums[start]) {
+            end = mid - 1;
+        }
+        // checking for (nums[mid] > nums[start])
+        else {
+            start = mid + 1;
+        }
+    }
+    return -1;
+}
+
+// console.log(findPivot([4,5,6,7,0,1,2]));
